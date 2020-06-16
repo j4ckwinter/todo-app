@@ -9,6 +9,7 @@ import { TodoItemComponent } from './todo/todo-list/todo-item/todo-item.componen
 import { TodoDetailComponent } from './todo/todo-detail/todo-detail.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodoFormComponent } from './todo/todo-form/todo-form.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TodoFormComponent } from './todo/todo-form/todo-form.component';
     TodoItemComponent,
     TodoDetailComponent,
     TodoComponent,
-    TodoFormComponent
+    TodoFormComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
