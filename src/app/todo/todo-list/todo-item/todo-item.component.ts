@@ -10,14 +10,9 @@ import {TodoService} from "../../todo.service";
 export class TodoItemComponent implements OnInit {
 
   @Input() item: TodoItem;
-
-  constructor(private todoService: TodoService) { }
+  @Input() todoId: number;
 
   ngOnInit(): void {
-  }
-
-  onSelected() {
-    this.todoService.todoSelected.emit(this.item);
   }
 
 }

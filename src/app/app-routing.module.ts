@@ -3,9 +3,13 @@ import {Routes, RouterModule} from '@angular/router';
 import {TodoFormComponent} from "./todo/todo-form/todo-form.component";
 import {TodoComponent} from "./todo/todo.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {TodoDetailComponent} from "./todo/todo-detail/todo-detail.component";
 
 const routes: Routes = [
-  { path: '', component: TodoComponent },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: TodoComponent, children: [
+      { path: ':id', component: TodoDetailComponent }
+    ] },
   { path: 'currentItems', component: TodoFormComponent },
   { path: 'deletedItems', component: TodoFormComponent },
   { path: 'not-found', component: PageNotFoundComponent },
