@@ -6,10 +6,16 @@
         {{ todo.title }}
       </div>
       <div class="panel-body">
-        Panel content
+        Item Status: {{ todo.itemStatus }}
+        <br>
+        Created Date: {{ todo.dateCreated }}
+        <br>
+        Due Date: {{ todo.dateToComplete }}
       </div>
       <div class="panel-body">
-        Panel content
+        Description:
+        <br>
+        {{ todo.description }}
       </div>
       <div class="panel-body">
         <button class="btn btn-danger pull-right">Edit</button>
