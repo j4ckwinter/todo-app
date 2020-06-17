@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TodoService} from "./todo.service";
-import {TodoItem} from "./todo-item.model";
 
 @Component({
   selector: 'app-todo',
@@ -9,16 +8,9 @@ import {TodoItem} from "./todo-item.model";
   providers: [TodoService]
 })
 export class TodoComponent implements OnInit {
-
-  selectedTodo: TodoItem;
-  constructor(private todoService: TodoService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.todoService.todoSelected.subscribe(
-      (todo: TodoItem) => {
-        this.selectedTodo = todo;
-      }
-    )
   }
 
 }
