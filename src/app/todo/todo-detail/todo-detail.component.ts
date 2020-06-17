@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TodoItem} from "../todo-item.model";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {TodoService} from "../todo.service";
 
 @Component({
@@ -13,6 +13,7 @@ export class TodoDetailComponent implements OnInit {
   id: number;
 
   constructor(private todoService: TodoService,
+              private router: Router,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -24,4 +25,7 @@ export class TodoDetailComponent implements OnInit {
     )
   }
 
+  onTodoEdit() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
+  }
 }
