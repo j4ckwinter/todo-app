@@ -10,7 +10,7 @@ import {TodoService} from "../todo.service";
 })
 export class TodoDetailComponent implements OnInit {
   todo: TodoItem;
-  id: number;
+  id: string;
 
   constructor(private todoService: TodoService,
               private router: Router,
@@ -19,10 +19,11 @@ export class TodoDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(
       (params: Params) => {
-        this.id = +params['id'];
+        this.id = params['id'];
         this.todo = this.todoService.getTodoItem(this.id);
       }
-    )
+    );
+
   }
 
   onTodoEdit() {

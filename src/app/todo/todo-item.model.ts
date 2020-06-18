@@ -1,23 +1,17 @@
 export class TodoItem {
-  id: number;
+  id: string;
   title: string;
   description: string;
-  expectedHours: number;
-  itemStatus: number;
   category: string;
-  dateCreated: string;
-  dateToComplete: string;
   priority: number;
+  dateCreated: string;
 
-  constructor(id: number, title: string, description: string, expectedHours: number, itemStatus: number, category: string, dateCreated: string, dateToComplete: string, priority: number) {
+  constructor(id: string, title: string, description: string, category: string, priority: number, dateCreated: string) {
     this.id = id;
     this.title = title;
     this.description = description;
-    this.expectedHours = expectedHours;
-    this.itemStatus = itemStatus;
     this.category = category;
-    this.dateCreated = dateCreated;
-    this.dateToComplete = dateToComplete;
     this.priority = priority;
+    this.dateCreated = dateCreated;
   }
 }

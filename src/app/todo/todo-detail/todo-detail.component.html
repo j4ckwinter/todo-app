@@ -1,22 +1,18 @@
 <br>
 <div class="row">
   <div class="col-xs-12">
-    <div class="panel panel-default">
+    <div class="panel panel-info">
       <div class="panel-heading">
         {{ todo.title }}
       </div>
       <div class="panel-body">
-        Item Status: {{ todo.itemStatus }}
-        <br>
-        Created Date: {{ todo.dateCreated }}
-        <br>
-        Due Date: {{ todo.dateToComplete }}
-      </div>
-      <div class="panel-body">
-        Description:
-        <br>
         {{ todo.description }}
       </div>
+      <ul class="list-group">
+        <li class="list-group-item">Priority: {{ todo.priority }}</li>
+        <li class="list-group-item">Category: {{ todo.category }}</li>
+        <li class="list-group-item">Date Created: {{ todo.dateCreated }}</li>
+      </ul>
       <div class="panel-body">
         <button (click)="onTodoEdit()" class="btn btn-danger pull-right">Edit</button>
       </div>
