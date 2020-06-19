@@ -1,7 +1,7 @@
 <br>
 <div class="row">
   <div class="col-xs-12">
-    <div class="panel panel-info">
+    <div class="panel panel-primary">
       <div class="panel-heading">
         {{ todo.title }}
       </div>
@@ -14,7 +14,11 @@
         <li class="list-group-item">Date Created: {{ todo.dateCreated }}</li>
       </ul>
       <div class="panel-body">
-        <button (click)="onTodoEdit()" class="btn btn-danger pull-right">Edit</button>
+        <div class="btn-group btn-group-justified">
+          <div class="btn-group" role="group">
+            <button (click)="onTodoEdit()" class="btn btn-danger">Edit</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

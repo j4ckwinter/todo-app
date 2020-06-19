@@ -27,9 +27,9 @@ export class TodoService {
     return this.todoItems.slice();
   }
 
-  resolveTodoItem(item: TodoItem) {
+  resolveTodoItem(id: string) {
     let index: number;
-    index = this.todoItems.indexOf(this.getTodoItem(item.id));
+    index = this.todoItems.indexOf(this.getTodoItem(id));
     this.todoItems.splice(index, 1);
     this.todoItemsChanged.next(this.todoItems.slice());
   }

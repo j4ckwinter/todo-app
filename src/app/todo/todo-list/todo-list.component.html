@@ -4,4 +4,7 @@
     [item]="item"
     [todoId]="item.id"
   ></app-todo-item>
+  <h4 *ngIf="!todoItems.length">
+    There are no items in todo!
+  </h4>
 </ul>

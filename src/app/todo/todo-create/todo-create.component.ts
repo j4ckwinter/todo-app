@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {TodoItem} from "../todo-item.model";
 import {TodoService} from "../todo.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
@@ -14,10 +14,10 @@ export class TodoCreateComponent implements OnInit {
   form: FormGroup;
   id: string;
   editMode: boolean;
-  existingTodo: TodoItem;
 
   constructor(private route: ActivatedRoute,
-              private todoService: TodoService) {
+              private todoService: TodoService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -68,7 +68,16 @@ export class TodoCreateComponent implements OnInit {
       } else {
         this.todoService.addTodoItem(this.form.value);
       }
+      this.router.navigate(['/dashboard']);
     }
+  }
+
+  onDelete() {
+    this.router.navigate(['/dashboard']).then(() => this.todoService.resolveTodoItem(this.form.value['id']));
+  }
+
+  onCancel() {
+    this.router.navigate(['/dashboard']);
   }
 }
 
